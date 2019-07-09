@@ -6,14 +6,19 @@ const { buildSchema } = require("graphql");
 const schema = buildSchema(`
     type Query {
         user: String
+        users:[String]
            } 
           `);
 
 const name = "Caio";
+const otherName = "Carlos"
 
 const resolvers = {
     user() {
         return name;
+    },
+    users(){
+        return [name, otherName];
     }
 };
 
